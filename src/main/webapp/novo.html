@@ -14,7 +14,8 @@
 			<td><input type="text" name="nome" placeholder="Nome" class="Caixa1"></td>
 		</tr>
 		<tr>
-			<td><input type="text" name="fone" placeholder="Fone" class="Caixa2"></td>
+			<td><input type="text" name="fone" placeholder="Fone" class="Caixa2" id="phone"
+                                    onkeypress="mask(this,mphone)" onblur="mask(this,mphone);"></td>
 		</tr>
 		<tr>
 			<td><input type="text" name="email" placeholder="E-mail" class="Caixa1"></td>

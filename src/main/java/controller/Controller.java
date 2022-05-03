@@ -24,7 +24,7 @@ public class Controller extends HttpServlet {
 
 		if (action.equals("/main")) {
 			contatos(request, response);
-		} else if(action.equals("/insert")) {
+		} else if (action.equals("/insert")) {
 			novoContato(request, response);
 		} else {
 			response.sendRedirect("index.html");
@@ -32,21 +32,24 @@ public class Controller extends HttpServlet {
 	}
 
 	// Listar contatos
-	protected void contatos (HttpServletRequest request, HttpServletResponse response)
+	protected void contatos(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("agenda.jsp");		
+		response.sendRedirect("agenda.jsp");
 	}
-	
+
 	// Novo contato
-	protected void novoContato (HttpServletRequest request, HttpServletResponse response)
+	protected void novoContato(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//teste de recebimento dos dados do form
-		System.out.println(request.getParameter("nome"));
-		System.out.println(request.getParameter("fone"));
-		System.out.println(request.getParameter("email"));
-		//setar as variáveis JavaBenas
+
+		// setar as variáveis JavaBeans
 		contato.setNome(request.getParameter("nome"));
-		contato.setFone(request.getParameter("fone"));		
-		contato.setEmail(request.getParameter("email"));		
+		contato.setFone(request.getParameter("fone"));
+		contato.setEmail(request.getParameter("email"));
+
+		// invocar o método inserirContato passando o objeto contato
+		dao.inserirContato(contato);
+
+		// redirecionar para o documento agenda.jsp
+		response.sendRedirect("main");
 	}
 }
