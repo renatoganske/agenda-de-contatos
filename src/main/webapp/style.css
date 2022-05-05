@@ -28,7 +28,7 @@ h1{
 	padding: 5px;
 	margin-bottom: 10px;
 	border: 1px solid #66bbff;
-		border-radius: 5px;
+	border-radius: 5px;
 }
 
 .Caixa2 {
@@ -36,6 +36,12 @@ h1{
 	margin-bottom: 10px;
 	border: 1px solid #66bbff;
 	border-radius: 5px;
+}
+
+#Caixa3 {
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #ff0000;
 }
 
 #tabela {

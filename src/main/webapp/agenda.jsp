@@ -24,17 +24,19 @@ ArrayList<JavaBeans> lista = (ArrayList<JavaBeans>) request.getAttribute("contat
 				<th>Nome</th>
 				<th>Fone</th>
 				<th>Email</th>
+				<th>Opções</th>
 			</tr>
 		</thead>
 		<tbody>
-		<%for (int i=0; i < lista.size(); i++) { %>
+			<% for (int i = 0; i < lista.size(); i++) {	%>
 			<tr>
-				<td> <%=lista.get(i).getIdcon()%></td>
-				<td> <%=lista.get(i).getNome()%></td>
-				<td> <%=lista.get(i).getFone()%></td>
-				<td> <%=lista.get(i).getEmail()%></td>
+				<td><%=lista.get(i).getIdcon()%></td>
+				<td><%=lista.get(i).getNome()%></td>
+				<td><%=lista.get(i).getFone()%></td>
+				<td><%=lista.get(i).getEmail()%></td>
+				<td><a href="select?idcon<%=lista.get(i).getIdcon() %>" class="Botao1">Editar</a></td>
 			</tr>
-		<%} %>
+			<% } %>
 		</tbody>
 
 	</table>
